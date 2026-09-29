@@ -15,7 +15,7 @@ A Minecraft Paper plugin providing a GUI-based shop system with support for mult
 - Maven-based Java project
 
 ## Project Structure
-
+```
 Volter_Shop/
 ├── pom.xml
 ├── src/
@@ -35,6 +35,7 @@ Volter_Shop/
 ├── builds/
 │   └── Volter_Shop-1.0.0.jar
 └── .gitignore
+```
 
 ## Requirements
 

@@ -32,8 +32,8 @@ Volter_Shop/
 │       └── resources/
 │           ├── config.yml
 │           └── plugin.yml
-├── builds/
-│   └── Volter_Shop-1.0.0.jar
+│
+│
 └── .gitignore
 ```
 

@@ -252,64 +252,35 @@ public class ShopGUI implements Listener {
 
     private ItemStack display(Entry en) {
         FileConfiguration c = plugin.getConfig();
-
         int stack = en.mat().getMaxStackSize();
 
         List<String> lore = new ArrayList<>();
-
         lore.add(color("&8━━━━━━━━━━━━━━━━"));
         lore.add("");
 
+        // Show each instruction exactly once, using config.yml.
         if (en.buy() >= 0) {
-            lore.add(color(
-                    c.getString("lore.buy", "&aBuy: &f{price}")
-                            .replace("{price}", plugin.money(en.buy()))
-            ));
+            lore.add(color(c.getString("lore.buy", "&aLeft-click &7→ Buy 1 &8- &f{price}")
+                    .replace("{price}", plugin.money(en.buy()))));
 
             if (stack > 1) {
-                lore.add(color(
-                        c.getString(
-                                "lore.buy-stack",
-                                "&aBuy stack: &f{stack_price}"
-                        ).replace(
-                                "{stack_price}",
-                                plugin.money(en.buy() * stack)
-                        )
-                ));
+                lore.add(color(c.getString("lore.buy-stack", "&aShift + Left-click &7→ Buy a stack &8- &f{stack_price}")
+                        .replace("{stack_price}", plugin.money(en.buy() * stack))));
             }
         } else {
             lore.add(color("&c✘ Not for sale"));
         }
 
         if (en.sell() >= 0) {
-            lore.add(color(
-                    c.getString("lore.sell", "&6Sell: &f{price}")
-                            .replace("{price}", plugin.money(en.sell()))
-            ));
-
-            lore.add(color(
-                    c.getString(
-                            "lore.sell-all",
-                            "&6Sell all: &fRight-click"
-                    )
-            ));
+            lore.add(color(c.getString("lore.sell", "&cRight-click &7→ Sell 1 &8- &f{price}")
+                    .replace("{price}", plugin.money(en.sell()))));
+            lore.add(color(c.getString("lore.sell-all", "&cShift + Right-click &7→ Sell all")));
         } else {
             lore.add(color("&c✘ Cannot be sold"));
         }
 
         lore.add("");
         lore.add(color("&8━━━━━━━━━━━━━━━━"));
-        lore.add("");
-
-        if (en.buy() >= 0) {
-            lore.add(color("&aLeft-click &7→ Buy 1"));
-            lore.add(color("&aShift + Left-click &7→ Buy a stack"));
-        }
-
-        if (en.sell() >= 0) {
-            lore.add(color("&6Right-click &7→ Sell 1"));
-            lore.add(color("&6Shift + Right-click &7→ Sell all"));
-        }
 
         ItemStack s = new ItemStack(en.mat());
         ItemMeta m = s.getItemMeta();
@@ -549,9 +520,9 @@ public class ShopGUI implements Listener {
                     Material.EMERALD,
                     "&a&lBalance",
                     List.of(
-                            "&7Economy: &cUnavailable",
+                            color("&7Economy: &cUnavailable"),
                             "",
-                            "&8Install/configure an economy provider."
+                            color("&8Install/configure an economy provider.")
                     )
             );
         }
@@ -562,9 +533,9 @@ public class ShopGUI implements Listener {
                 Material.EMERALD,
                 "&a&lYour Balance",
                 List.of(
-                        "&7Available: &f" + plugin.money(balance),
+                        color("&7Available: &f" + plugin.money(balance)),
                         "",
-                        "&8Economy: &f" + eco.name()
+                        color("&8Economy: &f" + eco.name())
                 )
         );
     }

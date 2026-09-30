@@ -1,5 +1,5 @@
 name: Volter_Shop
-version: 1.1.0
+version: 1.2.0
 main: dev.shop.VolterShop
 api-version: '1.20'
 softdepend: [Vault, PlayerPoints, PlaceholderAPI]

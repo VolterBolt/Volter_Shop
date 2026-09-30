@@ -1,4 +1,4 @@
-![Volter Shop Banner](ShopBanner.png)
+![Volter Shop Banner](assets/ShopBanner.png)
 
 # ✦ Volter Shop
 

@@ -5,9 +5,9 @@
 [![Java](https://img.shields.io/badge/Java-17%2B-orange?logo=openjdk)](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 [![Paper](https://img.shields.io/badge/Paper-1.20.4-blue?logo=minecraft)](https://papermc.io/)
 [![Version](https://img.shields.io/badge/version-1.2.0-6f42c1)](https://github.com/VolterBolt/Volter_Shop)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![License](https://img.shields.io/badge/license-Custom-red)](LICENSE)
 
-Volter Shop turns your server shop into an intuitive inventory interface. Players can browse categories, buy individual items or full stacks, sell items from their inventory, and view their current balance without leaving the game.
+Volter Shop turns your server shop into an intuitive inventory interface. Players can browse categories, buy individual items or full stacks, sell items from their inventory, and view their current balance.
 
 > **Project status:** Development / testing project. Always test economy and transaction settings on a staging server before using them in production.
 
@@ -177,7 +177,7 @@ Volter_Shop/
 <details>
 <summary><strong>The shop says the economy is unavailable</strong></summary>
 
-Confirm that the provider in `config.yml` matches an installed and enabled economy plugin. For `VAULT`, install both Vault and a Vault-compatible economy implementation. Check the server console during startup for the provider status.
+Confirm that the provider in `config.yml` matches an installed and enabled economy plugin. For `VAULT`, install both Vault and a Vault-compatible economy implementation. Check the server console for error messages.
 </details>
 
 <details>
@@ -210,7 +210,7 @@ Bug reports and feature suggestions are welcome through [GitHub Issues](https://
 
 ## 📄 License
 
-Volter Shop is distributed under the MIT License. See [LICENSE](LICENSE) for the complete license text.
+Volter Shop is distributed under a custom license. See [LICENSE](LICENSE) for the complete license text.
 
 ---
 

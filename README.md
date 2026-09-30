@@ -1,3 +1,15 @@
+```
+╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║                    ✦ VOLTER SHOP ✦                               ║
+║                                                                   ║
+║        A Configurable GUI-First Shop Plugin for Paper             ║
+║                                                                   ║
+║                   Simple Trading • Flexible Economy               ║
+║                                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+```
+
 # ✦ Volter Shop
 
 > A configurable, GUI-first shop plugin for Paper servers — built for simple player trading and flexible economy integrations.
@@ -7,7 +19,7 @@
 [![Version](https://img.shields.io/badge/version-1.2.0-6f42c1)](https://github.com/VolterBolt/Volter_Shop)
 [![License](https://img.shields.io/badge/license-Custom-red)](LICENSE)
 
-Volter Shop turns your server shop into an intuitive inventory interface. Players can browse categories, buy individual items or full stacks, sell items from their inventory, and view their current balance.
+Volter Shop turns your server shop into an intuitive inventory interface. Players can browse categories, buy individual items or full stacks, sell items from their inventory, and view their current balance—all without leaving the game.
 
 > **Project status:** Development / testing project. Always test economy and transaction settings on a staging server before using them in production.
 
@@ -177,7 +189,7 @@ Volter_Shop/
 <details>
 <summary><strong>The shop says the economy is unavailable</strong></summary>
 
-Confirm that the provider in `config.yml` matches an installed and enabled economy plugin. For `VAULT`, install both Vault and a Vault-compatible economy implementation. Check the server console for error messages.
+Confirm that the provider in `config.yml` matches an installed and enabled economy plugin. For `VAULT`, install both Vault and a Vault-compatible economy implementation. Check the server console for detailed error messages from the provider.
 </details>
 
 <details>

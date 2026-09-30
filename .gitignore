@@ -1,7 +1,10 @@
 target/
+Builds/
+
 .idea/
 .vscode/
 *.iml
+
 .classpath
 .project
 .settings/

@@ -1,77 +1,125 @@
-# ---------------------------------------------------------------------
-#  ECONOMY - change ONE line (economy.provider) to switch plugins.
-#
-#  VAULT         Anything that hooks into Vault (EssentialsX, CMI, XConomy,
-#                TheNewEconomy, ...). Requires Vault.
-#  PLAYERPOINTS  PlayerPoints directly (whole numbers only).
-#  COMMAND       Universal fallback for ANY economy plugin that has console
-#                commands. Requires PlaceholderAPI to read balances.
-#
-#  After changing it: /shop reload
-# ---------------------------------------------------------------------
+# ============================================================
+#                    VOLTER SHOP v1.1.0
+# ============================================================
+
 economy:
+  # VAULT = EssentialsX / any Vault economy
+  # PLAYERPOINTS = PlayerPoints
+  # COMMAND = command-based economy
   provider: VAULT
-  # How prices are displayed. Examples: "$%.2f"  |  "%.0f Coins"  |  "%.0f Points"
+
+  # Money display format
   format: "$%.2f"
-  # Only used when provider is COMMAND
+
+  # Used only when provider: COMMAND
   command:
-    balance-placeholder: "%vault_eco_balance%"   # must return a plain number
+    balance-placeholder: "%vault_eco_balance%"
     deposit: "eco give {player} {amount}"
     withdraw: "eco take {player} {amount}"
 
-gui:
-  title: "&8Server Shop"
-  rows: 3            # main menu rows (1-6)
 
-# ---------------------------------------------------------------------
-#  SHOP CONTENT
-#  buy  = price the player pays      (omit = can't be bought)
-#  sell = price the player receives  (omit = can't be sold)
-#  Max 45 items per category. Material names: https://jd.papermc.io/paper/1.20/org/bukkit/Material.html
-# ---------------------------------------------------------------------
+# ============================================================
+#                         GUI
+# ============================================================
+
+gui:
+  title: "&8✦ &6Volter Shop"
+  rows: 6
+
+
+# ============================================================
+#                       CATEGORIES
+# ============================================================
+
 categories:
+
   blocks:
-    name: "&aBlocks"
+    name: "&a&lBlocks"
     icon: GRASS_BLOCK
     slot: 11
     items:
+
       - { material: STONE, buy: 10, sell: 2 }
-      - { material: OAK_LOG, buy: 8, sell: 1 }
+      - { material: COBBLESTONE, buy: 8, sell: 1 }
+      - { material: STONE_BRICKS, buy: 12, sell: 3 }
+      - { material: DIRT, buy: 5, sell: 1 }
+      - { material: OAK_LOG, buy: 8, sell: 2 }
+      - { material: SPRUCE_LOG, buy: 8, sell: 2 }
       - { material: GLASS, buy: 12, sell: 3 }
+
+
   food:
-    name: "&6Food"
+    name: "&6&lFood"
     icon: BREAD
     slot: 13
     items:
+
       - { material: BREAD, buy: 15, sell: 4 }
       - { material: COOKED_BEEF, buy: 20, sell: 6 }
+      - { material: COOKED_PORKCHOP, buy: 20, sell: 6 }
+      - { material: COOKED_CHICKEN, buy: 18, sell: 5 }
+      - { material: APPLE, buy: 25, sell: 7 }
       - { material: GOLDEN_APPLE, buy: 200 }
+
+
   ores:
-    name: "&bOres"
+    name: "&b&lOres"
     icon: DIAMOND
     slot: 15
     items:
+
+      - { material: COAL, buy: 20, sell: 8 }
+      - { material: RAW_IRON, buy: 35, sell: 15 }
       - { material: IRON_INGOT, buy: 50, sell: 20 }
+      - { material: RAW_GOLD, buy: 55, sell: 20 }
       - { material: GOLD_INGOT, buy: 80, sell: 30 }
       - { material: DIAMOND, buy: 300, sell: 100 }
+      - { material: EMERALD, buy: 400, sell: 150 }
+
+
+# ============================================================
+#                         LORE
+# ============================================================
 
 lore:
+
   browse: "&7Click to browse"
-  buy: "&aLeft-click &7buy 1 &8- &f{price}"
-  buy-stack: "&aShift+Left &7buy a stack &8- &f{stack_price}"
-  sell: "&cRight-click &7sell 1 &8- &f{price}"
-  sell-all: "&cShift+Right &7sell all you have"
+
+  buy: "&aLeft-click &7→ Buy 1 &8• &f{price}"
+
+  buy-stack: "&aShift + Left-click &7→ Buy a stack &8• &f{stack_price}"
+
+  sell: "&cRight-click &7→ Sell 1 &8• &f{price}"
+
+  sell-all: "&cShift + Right-click &7→ Sell all"
+
+
+# ============================================================
+#                        MESSAGES
+# ============================================================
 
 messages:
-  prefix: "&8[&6Shop&8] "
+
+  prefix: "&8[&6Volter Shop&8] "
+
   bought: "&aBought &f{amount}x {item} &afor &f{price}&a."
+
   sold: "&aSold &f{amount}x {item} &afor &f{price}&a."
+
   not-enough-money: "&cYou need &f{price}&c but only have &f{balance}&c."
+
   inventory-full: "&cNot enough inventory space."
+
   not-for-sale: "&cThis item can't be bought."
+
   not-sellable: "&cThis item can't be sold."
+
   nothing-to-sell: "&cYou don't have any {item} to sell."
+
   economy-unavailable: "&cThe shop economy isn't available right now."
+
   transaction-failed: "&cTransaction failed."
+
   no-permission: "&cYou don't have permission."
+
   reloaded: "&aShop reloaded."
